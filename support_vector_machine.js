@@ -867,6 +867,7 @@ function entrenadorSupportVectorMachine(){
 
 function creaYClasificaInstancia(){
 
+  //checamos que radio es seleccionado para asi poder determinar que metodo de prediccion sera utilizado
 
   var metodo = document.getElementById("metodos");
   var opciones = metodo.getElementsByTagName("input");
@@ -880,12 +881,8 @@ function creaYClasificaInstancia(){
 
   
   if(val == 2){
-
-
  
-
-
-		  entrenadorSupportVectorMachine();
+		entrenadorSupportVectorMachine();
 		var coleccionPreguntas = document.getElementById("preguntas").getElementsByTagName("div");
 		instancia = [];
 		for(var i=0; i<coleccionPreguntas.length; i++){
@@ -899,17 +896,18 @@ function creaYClasificaInstancia(){
 
 		if(clasificacion == 1){
 
-		resultado = "¡Cuidado!, usted está en RIESGO de desertar de la universidad.";
+		resultado = "¡Cuidado!, usted está en RIESGO de desertar de la universidad." + clasificacion;
 		}
 		else{
 		resultado = "Usted NO está en riesgo de desertar de la universidad.";
 		}
 		alert(resultado);
-    }
+    }//end of if 
   
   
 }//end of creaInstancia
 
+//funcion con la que obtenemos los valores del formulrio ("input")
 function obtieneRespuesta(radioGroupId){
   var pregunta = document.getElementById(radioGroupId);
   var opciones = pregunta.getElementsByTagName("input");
