@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Detección de Riesgo de Deserción Universitaria</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width-divice-width, initial-scale=1.0">
+    <script src="scripts/machine_learning.min.js"></script>
+    <script src="scripts/support_vector_machine.js"></script>
+  </head>
+
+  <div class="container">
+      <header>
+        <font face="Comic Sans MS,arial,aqua"><h1>Encuesta de Deserción Universitaria</h1></font>
+      </header>
+
+      <div  class="form">
+        <form id="contactform">
+  
+  <body>
+    <script lenguaje="javascript">
+      //entrenaClasificador();
+    </script>
+
+
+    <div id="preguntas"><!-- contenedor principal -->  
+      
+      <div id="pregunta1"><!-- inicio pregunta 1 -->
+        <h3><b>1. Sexo</b></h3><BR>            
+        <input type="radio" name="radP01" id="p01o01" value="1" checked="checked" />
+        <label for="p01o01">Masculino.</label><BR>
+        
+        <input type="radio" name="radP01" id="p01o02" value="2" />
+        <label for="p01o02">Femenino.</label><BR>
+        
+      </div><!-- fin pregunta 1 -->
+      <br>
+      <div id="pregunta2"><!-- inicio pregunta 2 -->
+        <h3><b>2. Edad actual</b></h3><BR>           
+        <input type="radio" name="radP02" id="p02o01" value="18" checked="checked" />
+        <label for="p02o01">18.</label>
+        
+        <input type="radio" 
+        <input type="radio" name="radP02" id="p02o06" value="23" />
+        <label for="p02o06">23.</label>
+        
+        <input type="radio" name="radP02" id="p02o07" value="24" />
+        <label for="p02o07">24.</label>
+
+        <input type="radio" name="radP02" id="p02o08" value="25" />
+        <label for="p02o08">25.</label>
+
+        <br>
+        
+        <input type="radio" name="radP02" id="p02o09" value="26" />
+        <label for="p02o09">26.</label>
+
+        <input type="radio" name="radP02" id="p02o10" value="27" />
+        <label for="p02o10">27.</label>
+        
+        <input type="radio" name="radP02" id="p02o11" value="28" />
+        <label for="p02o11">28.</label>
+
+        <input type="radio" name="radP02" id="p02o12" value="29" />
+        <label for="p02o12">29.</label>
+
+        <br>
+        
+        <input type="radio" name="radP02" id="p02o13" value="31" />
+        <label for="p02o13">30+.</label>
+
+      </div><!-- fin pregunta 2 -->
+      <br>
+      <div id="pregunta3"><!-- inicio pregunta 3 -->
+        <h3><b>3. Turno</b></h3><BR>           
+        <input type="radio" name="radP03" id="p03o01" value="1" checked="checked" />
+        <label for="p03o01">Matutino.</label><BR>
+        
+        <input type="radio" name="radP03" id="p03o02" value="2" />
+        <label for="p03o02">Vespertino.</label><BR>
+        
+        <input type="radio" name="radP03" id="p03o03" value="3" />
+        <label for="p03o03">Mixto.</label><BR>
+    
+      </div><!-- fin pregunta 3 -->
+      <br>
+      <div id="pregunta4"><!-- inicio pregunta 4 -->
+        <h3><b>4. En que cuatrimestre/semestre estas o en cual desertaste</b></h3><BR>
+        <br>          
+        <input type="radio" name="radP04" id="p04o01" value="1" checked="checked" />
+        <label for="p04o01">1.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o02" value="2" />
+        <label for="p04o02">2.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o03" value="3" />
+        <label for="p04o03">3.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o04" value="4" />
+        <label for="p04o04">4.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o05" value="5" />
+        <label for="p04o05">5.</label><BR>
+
+        <input type="radio" name="radP04" id="p04o06" value="6" />
+        <label for="p04o06">6.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o07" value="7" />
+        <label for="p04o07">7.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o08" value="8" />
+        <label for="p04o08">8.</label><BR>
+        
+        <input type="radio" name="radP04" id="p04o09" value="9" />
+        <label for="p04o09">9.</label><BR>
+
+         <input type="radio" name="radP04" id="p04o10" value="10" />
+        <label for="p04o10">10.</label><BR>
+      </div><!-- fin pregunta 4 -->
+      <br>
+      <div id="pregunta5"><!-- inicio pregunta 5 -->
+        <h3><b>5. Carrera</b></h3><BR>          
+        <input type="radio" name="radP05" id="p05o01" value="1" checked="checked" />
+        <label for="p05o01">Ingenieria.</label><BR>
+        
+        <input type="radio" name="radP05" id="p05o02" value="2" />
+        <label for="p05o02">Licenciaruta.</label><BR>
+        
+      </div><!-- fin pregunta 5 -->
+      <br>
+      <div id="pregunta6"><!-- inicio pregunta 6 -->
+        <h3><b>6. Edad de deserción (Nota: Si no has desertado pon 0 cero)</b></h3><BR>         
+        <input type="radio" name="radP06" id="p06o01" value="0" checked="checked" />
+        <label for="p06o01">0.</label>
+
+        <input type="radio" name="radP06" id="p06o02" value="18" />
+        <label for="p06o02">18.</label>
+        
+        <input type="radio" name="radP06" id="p06o03" value="19" />
+        <label for="p06o03">19.</label>
+        
+        <input type="radio" name="radP06" id="p06o04" value="20" />
+        <label for="p06o04">20.</label>
+
+        <br>
+
+        <input type="radio" name="radP06" id="p06o05" value="21" />
+        <label for="p06o05">21.</label>
+
+        <input type="radio" name="radP06" id="p06o06" value="22" />
+        <label for="p06o06">22.</label>
+
+        <input type="radio" name="radP06" id="p06o07" value="23" />
+        <label for="p06o07">23.</label>
+        
+        <input type="radio" name="radP06" id="p06o08" value="24" />
+        <label for="p06o08">24.</label>
+
+        <br>
+
+        <input type="radio" name="radP06" id="p06o09" value="25" />
+        <label for="p06o09">25.</label>
+        
+        <input type="radio" name="radP06" id="p06o10" value="26" />
+        <label for="p06o10">26.</label>
+
+        <input type="radio" name="radP06" id="p06o11" value="27" />
+        <label for="p06o11">27.</label>
+        
+        <input type="radio" name="radP06" id="p06o12" value="28" />
+        <label for="p06o12">28.</label>
+        
+        <br>
+
+        <input type="radio" name="radP06" id="p06o13" value="29" />
+        <label for="p06o13">29.</label>
+        
+        <input type="radio" name="radP06" id="p06o14" value="31" />
+        <label for="p06o14">30+.</label>
+      </div><!-- fin pregunta 6 -->
+      <br>  
+      <div id="pregunta7"><!-- inicio pregunta 7 -->
+        <h3><b>7. Cuando usted inicio sus estudios superiores, ¿Quién eligió su carrera? </b></h3><BR>            
+        <input type="radio" name="radP07" id="p07o01" value="1" checked="checked" />
+        <label for="p07o01">Mis padres.</label><BR> 
+        
+        <input type="radio" name="radP07" id="p07o02" value="2" />
+        <label for="p07o02">Mis amigos.</label><BR>
+        
+      </div><!-- fin pregunta 7 -->
+      <br>
+      <div id="pregunta8"><!-- inicio pregunta 8 -->
+        <h3><b>8. ¿Se sentía satisfecho con sus estudios universitarios?</b></h3><BR>          
+        <input type="radio" name="radP08" id="p08o01" value="1" checked="checked" />
+        <label for="p08o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP08" id="p08o02" value="2" />
+        <label for="p08o02">No.</label><BR>
+        
+      </div><!-- fin pregunta 8 -->
+
+      <br>
+    <div id="pregunta9"><!-- inicio pregunta 9 -->        
+        <h3><b>9. ¿Contabas con algún tipo de beca para tus estudios?</b></h3><BR>            
+        <input type="radio" name="radP09" id="p09o01" value="1" checked="checked" />
+        <label for="p09o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP09" id="p09o02" value="2" />
+        <label for="p09o02">No.</label><BR>
+        
+      </div><!-- fin pregunta 9 -->
+      
+       <br>
+    <div id="pregunta10"><!-- inicio pregunta 10 -->
+        <h3><b>10. ¿Cuantas materias has reprobado?</b></h3><BR>          
+        <input type="radio" name="radP10" id="p10o01" value="1" checked="checked" />
+        <label for="p10o01">De 1 a 2.</label><BR> 
+        
+        <input type="radio" name="radP10" id="p10o02" value="2" />
+        <label for="p10o02">De 3 a 4.</label><BR>
+
+        <input type="radio" name="radP10" id="p10o03" value="3" />
+        <label for="p10o03">De 5 a 6.</label><BR>
+        
+      </div><!-- fin pregunta 10 -->
+
+      <br>
+    <div id="pregunta11"><!-- inicio pregunta 11 -->
+        <h3><b>11. ¿Cuantas veces te has cambiado de universidad? </b></h3><BR>          
+        <input type="radio" name="radP11" id="p11o01" value="1" checked="checked" />
+        <label for="p11o01">Ninguna.</label><BR> 
+        
+        <input type="radio" name="radP11" id="p11o02" value="2" />
+        <label for="p11o02">Una vez.</label><BR>
+
+        <input type="radio" name="radP11" id="p11o03" value="3" />
+        <label for="p11o03">Dos o mas.</label><BR>
+        
+      </div><!-- fin pregunta 11 -->
+
+      <br>
+    <div id="pregunta12"><!-- inicio pregunta 12 -->
+         <h3><b>12. ¿Qué promedio tenías cuando desertaste?(Nota: si no has desertado pon:0 Cero)</b></h3><BR>          
+        <input type="radio" name="radP12" id="p12o01" value="0" checked="checked" />
+        <label for="p12o01">0.</label><BR>
+        
+        <input type="radio" name="radP12" id="p12o02" value="6" />
+        <label for="p12o02">-7.</label><BR>
+
+        <input type="radio" name="radP12" id="p12o03" value="7" />
+        <label for="p12o03">7.</label><BR>
+
+        <input type="radio" name="radP12" id="p12o04" value="8" />
+        <label for="p12o04">8.</label><BR>
+
+        <input type="radio" name="radP12" id="p12o05" value="9" />
+        <label for="p12o05">9.</label><BR>
+
+        <input type="radio" name="radP12" id="p12o06" value="10" />
+        <label for="p12o06">10.</label><BR>
+        
+      </div><!-- fin pregunta 12 -->
+
+       <br>
+    <div id="pregunta13"><!-- inicio pregunta 13 -->
+        <h3><b>13. ¿Te mantiene interesada tu carrera? </b></h3><BR>          
+        <input type="radio" name="radP13" id="p13o01" value="1" checked="checked" />
+        <label for="p13o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP13" id="p13o02" value="2" />
+        <label for="p13o02">No.</label><BR>
+
+      </div><!-- fin pregunta 13 -->
+
+      <br>
+    <div id="pregunta14"><!-- inicio pregunta 14 -->
+        <h3><b>14. ¿Qué tiempo dura tu carrera?</b></h3><BR>          
+        <input type="radio" name="radP14" id="p14o01" value="1" checked="checked" />
+        <label for="p14o01">3-4 años.</label><BR> 
+        
+        <input type="radio" name="radP14" id="p14o02" value="2" />
+        <label for="p14o02">4-5 años.</label><BR>
+
+        <input type="radio" name="radP14" id="p14o03" value="3" />
+        <label for="p14o03">5+ años.</label><BR>
+
+      </div><!-- fin pregunta 14 -->
+      <br>
+    <div id="pregunta15"><!-- inicio pregunta 15 -->
+        <h3><b>15. ¿Te sientes motivado por tu carrera?</b></h3><BR>           
+        <input type="radio" name="radP15" id="p15o01" value="1" checked="checked" />
+        <label for="p15o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP15" id="p15o02" value="2" />
+        <label for="p15o02">No.</label><BR>
+
+      </div><!-- fin pregunta 15 -->
+
+      <br>
+    <div id="pregunta16"><!-- inicio pregunta 16 -->
+        <h3><b>16. ¿Existen factores externos que puedan influir en tu educación?</b></h3><BR>        
+        <input type="radio" name="radP16" id="p16o01" value="1" checked="checked" />
+        <label for="p16o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP16" id="p16o02" value="2" />
+        <label for="p16o02">No.</label><BR>
+
+      </div><!-- fin pregunta 16 -->
+       <br>
+    <div id="pregunta17"><!-- inicio pregunta 17 -->
+        <h3><b>17. ¿Cuentas con todos los materiales para desempeñar tus estudios?</b></h3><BR>     
+        <input type="radio" name="radP17" id="p17o01" value="1" checked="checked" />
+        <label for="p17o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP17" id="p17o02" value="2" />
+        <label for="p17o02">No.</label><BR>
+
+      </div><!-- fin pregunta 17 -->
+       <br>
+    <div id="pregunta18"><!-- inicio pregunta 18 -->
+        <h3><b>18. ¿Entras a todas tus clases?</b></h3><BR>     
+        <input type="radio" name="radP18" id="p18o01" value="1" checked="checked" />
+        <label for="p18o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP18" id="p18o02" value="2" />
+        <label for="p18o02">No.</label><BR>
+
+        <input type="radio" name="radP18" id="p18o03" value="3" />
+        <label for="p18o03">A veces.</label><BR>
+
+      </div><!-- fin pregunta 18 -->
+       <br>
+    <div id="pregunta19"><!-- inicio pregunta 19 -->
+        <h3><b>19. ¿Perteneces o pertenecías a algún grupo de estudio?</b></h3><BR>        
+        <input type="radio" name="radP19" id="p19o01" value="1" checked="checked" />
+        <label for="p19o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP19" id="p19o02" value="2" />
+        <label for="p19o02">No.</label><BR>
+
+      </div><!-- fin pregunta 19 -->
+       <br>
+    <div id="pregunta20"><!-- inicio pregunta 20 -->
+        <h3><b>20.¿Cuánto tiempo le dedicas o dedicabas al estudio?</b></h3><BR>     
+        <input type="radio" name="radP20" id="p20o01" value="0" checked="checked" />
+        <label for="p20o01">0 hrs.</label> <BR>
+        
+        <input type="radio" name="radP20" id="p20o02" value="1" />
+        <label for="p20o02">1 hrs.</label><BR>
+
+        <input type="radio" name="radP20" id="p20o03" value="2" />
+        <label for="p20o03">2 hrs.</label><BR>
+
+        <input type="radio" name="radP20" id="p20o04" value="3" />
+        <label for="p20o04">3 hrs.</label><BR>
+
+        <input type="radio" name="radP20" id="p20o05" value="4" />
+        <label for="p20o05">4 hrs.</label><BR>
+
+        <input type="radio" name="radP20" id="p20o06" value="5" />
+        <label for="p20o06">5 hrs.</label><BR>
+
+        <input type="radio" name="radP20" id="p20o07" value="6" />
+        <label for="p20o07">6 hrs.</label><BR>
+
+        <input type="radio" name="radP20" id="p20o08" value="8" />
+        <label for="p20o08">6 hrs.</label><BR>
+      </div><!-- fin pregunta 20 -->
+
+         <br>
+    <div id="pregunta21"><!-- inicio pregunta 21 -->
+        <h3><b>21. ¿Eres o eras parte de actividades extracurriculares en la universidad? </b></h3><BR>     
+        <input type="radio" name="radP21" id="p21o01" value="1" checked="checked" />
+        <label for="p21o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP21" id="p21o02" value="2" />
+        <label for="p21o02">No.</label><BR>
+
+      </div><!-- fin pregunta 21 -->
+       <br>
+    <div id="pregunta22"><!-- inicio pregunta 22 -->
+        <h3><b>22. Tu forma de estudio es o era:</b></h3><BR>      
+        <input type="radio" name="radP22" id="p22o01" value="1" checked="checked" />
+        <label for="p22o01">Organizado.</label><BR> 
+        
+        <input type="radio" name="radP22" id="p22o02" value="2" />
+        <label for="p22o02">No hacia tareas.</label><BR>
+
+        <input type="radio" name="radP22" id="p22o03" value="3" />
+        <label for="p22o03">No hacia tareas.</label><BR>
+
+      </div><!-- fin pregunta 22 -->
+       <br>
+    <div id="pregunta23"><!-- inicio pregunta 23 -->
+        <h3><b>23. ¿Cuál es o era tu estado civil mientras que cursabas la universidad?</b></h3><BR>    
+        <input type="radio" name="radP23" id="p23o01" value="1" checked="checked" />
+        <label for="p23o01">Soltero.</label><BR> 
+        
+        <input type="radio" name="radP23" id="p23o02" value="2" />
+        <label for="p23o02">Casado.</label><BR>
+
+        <input type="radio" name="radP23" id="p23o03" value="3" />
+        <label for="p23o03">Juntado(a).</label><BR>
+
+
+      </div><!-- fin pregunta 23 -->
+       <br>
+    <div id="pregunta24"><!-- inicio pregunta 24 -->
+        <h3><b>24. ¿Cuál es el último grado de estudio de tu papa?</b></h3><BR>      
+        <input type="radio" name="radP24" id="p24o01" value="1" checked="checked" />
+        <label for="p24o01">Primaria.</label><BR> 
+        
+        <input type="radio" name="radP24" id="p24o02" value="2" />
+        <label for="p24o02">Secundaria.</label><BR>
+
+        <input type="radio" name="radP24" id="p24o03" value="3" />
+        <label for="p24o03">Bachiller.</label><BR>
+
+        <input type="radio" name="radP24" id="p24o04" value="4" />
+        <label for="p24o04">Profesional.</label><BR>
+
+        <input type="radio" name="radP24" id="p24o05" value="5" />
+        <label for="p24o05">Ninguno.</label><BR>
+
+
+      </div><!-- fin pregunta 25 -->
+       <br>
+    <div id="pregunta25"><!-- inicio pregunta 16 -->
+        <h3><b>25. ¿Cuál es el último grado de estudio de tu mama?</b></h3><BR>       
+        <input type="radio" name="radP25" id="p25o01" value="1" checked="checked" />
+        <label for="p25o01">Primaria.</label><BR> 
+        
+        <input type="radio" name="radP25" id="p25o02" value="2" />
+        <label for="p25o02">Secundaria.</label><BR>
+
+        <input type="radio" name="radP25" id="p25o03" value="3" />
+        <label for="p25o03">Bachiller.</label><BR>
+
+        <input type="radio" name="radP25" id="p25o04" value="4" />
+        <label for="p25o04">Profesional.</label><BR>
+
+        <input type="radio" name="radP25" id="p25o05" value="5" />
+        <label for="p25o05">Ninguno.</label><BR>
+
+      </div><!-- fin pregunta 25 -->
+       <br>
+    <div id="pregunta26"><!-- inicio pregunta 26 -->
+        <h3><b>26.  ¿Cuánto tiempo te tardas en llegar a la escuela?</b></h3><BR> 
+        <input type="radio" name="radP26" id="p26o01" value="1" checked="checked" />
+        <label for="p26o01">0 a 10 minutos.</label><BR> 
+        
+        <input type="radio" name="radP26" id="p26o02" value="2" />
+        <label for="p26o02">11 a 20 minutos.</label><BR>
+
+        <input type="radio" name="radP26" id="p26o03" value="3" />
+        <label for="p26o03">21 a 30 minutos.</label><BR>
+
+        <input type="radio" name="radP26" id="p26o04" value="4" />
+        <label for="p26o04">31 a 40 minutos.</label><BR>
+
+        <input type="radio" name="radP26" id="p26o05" value="5" />
+        <label for="p26o05">50 a 1 hora.</label><BR>
+
+        <input type="radio" name="radP26" id="p26o06" value="6" />
+        <label for="p26o06">1+ horas.</label><BR>
+
+      </div><!-- fin pregunta 26 -->
+       <br>
+    <div id="pregunta27"><!-- inicio pregunta 27 -->
+        <h3><b>27.  ¿La carrera que cursas te motiva/motivaba a seguir estudiando?</b></h3><BR>    
+        <input type="radio" name="radP27" id="p27o01" value="1" checked="checked" />
+        <label for="p27o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP27" id="p27o02" value="2" />
+        <label for="p27o02">No.</label><BR>
+
+        <input type="radio" name="radP27" id="p27o03" value="3" />
+        <label for="p27o03">algunas veces.</label><BR>
+
+      </div><!-- fin pregunta 27 -->
+       <br>
+    <div id="pregunta28"><!-- inicio pregunta 28 -->
+        <h3><b>28. ¿Tienes alguna enfermedad que te impida o impidió continuar con tu carrera? </b></h3><BR>       
+        <input type="radio" name="radP28" id="p28o01" value="1" checked="checked" />
+        <label for="p28o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP28" id="p28o02" value="2" />
+        <label for="p28o02">No.</label><BR>
+
+      </div><!-- fin pregunta 28 -->
+       <br>
+    <div id="pregunta29"><!-- inicio pregunta 29 -->
+        <h3><b>29. ¿Asistes o asistías a actividades extracurriculares?</b></h3><BR>       
+        <input type="radio" name="radP29" id="p29o01" value="1" checked="checked" />
+        <label for="p29o01">Deportes.</label><BR> 
+        
+        <input type="radio" name="radP29" id="p29o02" value="2" />
+        <label for="p29o02">Artistico.</label><BR>
+
+        <input type="radio" name="radP29" id="p29o03" value="3" />
+        <label for="p29o03">Grupo de estudio.</label><BR>
+
+        <input type="radio" name="radP29" id="p29o04" value="4" />
+        <label for="p29o04">Ninguno.</label><BR>
+
+      </div><!-- fin pregunta 29 -->
+       <br>
+    <div id="pregunta30"><!-- inicio pregunta 30 -->
+        <h3><b>30. ¿Tienes algún vicio?</b></h3><BR>        
+        <input type="radio" name="radP30" id="p30o01" value="1" checked="checked" />
+        <label for="p30o01">Fumar.</label><BR> 
+        
+        <input type="radio" name="radP30" id="p30o02" value="2" />
+        <label for="p30o02">Ingerir alcohol.</label><BR>
+
+        <input type="radio" name="radP30" id="p30o03" value="3" />
+        <label for="p30o03">Ninguno.</label><BR>
+
+        <input type="radio" name="radP30" id="p30o04" value="4" />
+        <label for="p30o04">Otros.</label><BR>
+
+      </div><!-- fin pregunta 30 -->
+
+       <br>
+    <div id="pregunta31"><!-- inicio pregunta 31 -->
+        <h3><b>31. ¿Alguna persona depende de usted físicamente?</b></h3><BR>     
+        <input type="radio" name="radP31" id="p31o01" value="1" checked="checked" />
+        <label for="p31o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP31" id="p31o02" value="2" />
+        <label for="p31o02">No.</label><BR>
+
+        <input type="radio" name="radP31" id="p31o03" value="3" />
+        <label for="p31o03">A veces.</label><BR>
+
+
+      </div><!-- fin pregunta 31 -->
+       <br>
+    <div id="pregunta32"><!-- inicio pregunta 32 -->
+        <h3><b>32. ¿Cuánto tiempo le dedicas a tus pasatiempos</b></h3><BR>        
+        <input type="radio" name="radP32" id="p32o01" value="1" checked="checked" />
+        <label for="p32o01">1 hora.</label><BR> 
+        
+        <input type="radio" name="radP32" id="p32o02" value="2" />
+        <label for="p32o02">1/4 del dia.</label><BR>
+
+        <input type="radio" name="radP32" id="p32o03" value="3" />
+        <label for="p32o03">1/2 dia.</label><BR>
+
+         <input type="radio" name="radP32" id="p32o04" value="4" />
+        <label for="p32o04">Todo el dia.</label><BR>
+
+        <input type="radio" name="radP32" id="p32o05" value="5" />
+        <label for="p32o05">No tengo pasatiempos.</label><BR>
+
+      </div><!-- fin pregunta 32 -->
+       <br>
+    <div id="pregunta33"><!-- inicio pregunta 33 -->
+         <h3><b>33. ¿Contabas con los elementos necesarios para tu carrera?</b></h3><BR>       
+        <input type="radio" name="radP33" id="p33o01" value="1" checked="checked" />
+        <label for="p33o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP33" id="p33o02" value="2" />
+        <label for="p33o02">No.</label><BR>
+
+        <input type="radio" name="radP33" id="p33o03" value="3" />
+        <label for="p33o03">A veces.</label><BR>
+
+      </div><!-- fin pregunta 33 -->
+       <br>
+    <div id="pregunta34"><!-- inicio pregunta 34 -->
+        <h3><b>34. ¿Al momento de que desertaste te cambiaste de universidad?</b></h3><BR>      
+        <input type="radio" name="radP34" id="p34o01" value="1" checked="checked" />
+        <label for="p34o01">No.</label><BR> 
+        
+        <input type="radio" name="radP34" id="p34o02" value="2" />
+        <label for="p34o02">1 vez.</label><BR>
+
+        <input type="radio" name="radP34" id="p34o03" value="3" />
+        <label for="p34o03">2 veces.</label><BR>
+
+         <input type="radio" name="radP34" id="p34o04" value="4" />
+        <label for="p34o04">3 veces.</label><BR>
+
+        <input type="radio" name="radP34" id="p34o05" value="5" />
+        <label for="p34o05">3+ veces.</label><BR>
+
+      </div><!-- fin pregunta 34 -->
+       <br>
+    <div id="pregunta35"><!-- inicio pregunta 35 -->
+        <h3><b>35. ¿Rentas un departamento?</b></h3><BR>     
+        <input type="radio" name="radP35" id="p35o01" value="1" checked="checked" />
+        <label for="p35o01">Si.</label><BR> 
+        
+        <input type="radio" name="radP35" id="p35o02" value="2" />
+        <label for="p35o02">No.</label><BR>
+
+      </div><!-- fin pregunta 35 -->
+       <br>
+    <div id="pregunta36"><!-- inicio pregunta 36 -->
+        <h3><b>36. ¿Trabajas o estudias?</b></h3><BR>  
+        <input type="radio" name="radP36" id="p36o01" value="1" checked="checked" />
+        <label for="p36o01">Trabajo.</label><BR>
+        
+        <input type="radio" name="radP36" id="p36o02" value="2" />
+        <label for="p36o02">Estudio.</label><BR>
+
+        <input type="radio" name="radP36" id="p36o03" value="3" />
+        <label for="p36o03">Trabajo y estudio.</label><BR>
+
+         <input type="radio" name="radP36" id="p36o04" value="4" />
+        <label for="p36o04">Ninguno.</label><BR>
+
+      </div><!-- fin pregunta 36 -->
+       <br>
+    <div id="pregunta37"><!-- inicio pregunta 37 -->
+        <h3><b>37. ¿Dependiste de tus padres o algún familiar para tus gastos en la universidad?</b></h3><BR>  
+        <input type="radio" name="radP37" id="p37o01" value="1" checked="checked" />
+        <label for="p37o01">Padre.</label><BR> 
+        
+        <input type="radio" name="radP37" id="p37o02" value="2" />
+        <label for="p37o02">Madre.</label><BR>
+
+        <input type="radio" name="radP37" id="p37o03" value="3" />
+        <label for="p37o03">Tios.</label><BR>
+
+         <input type="radio" name="radP37" id="p37o04" value="4" />
+        <label for="p37o04">Abuelos.</label><BR>
+
+        <input type="radio" name="radP37" id="p37o05" value="5" />
+        <label for="p37o05">Otros.</label><BR>
+      </div><!-- fin pregunta 37 -->
+       <br>
+    <div id="pregunta38"><!-- inicio pregunta 38 -->
+        <h3><b>38. ¿Cuántas personas dependen de ti económicamente?</b></h3><BR>    
+        <input type="radio" name="radP38" id="p38o01" value="0" checked="checked" />
+        <label for="p38o01">0.</label><BR> 
+        
+        <input type="radio" name="radP38" id="p38o02" value="1" />
+        <label for="p38o02">1.</label><BR>
+
+        <input type="radio" name="radP38" id="p38o03" value="2" />
+        <label for="p38o03">2.</label><BR>
+
+         <input type="radio" name="radP38" id="p38o04" value="4" />
+        <label for="p38o04">Solo estudio.</label><BR>
+
+
+      </div><!-- fin pregunta 38 -->
+       <br>
+    <div id="pregunta39"><!-- inicio pregunta 39 -->
+        <h3><b>39. ¿En que gastaba la mayor parte de su economía?</b></h3><BR>   
+        <input type="radio" name="radP39" id="p39o01" value="1" checked="checked" />
+        <label for="p39o01">Alimentos.</label><BR> 
+        
+        <input type="radio" name="radP39" id="p39o02" value="2" />
+        <label for="p39o02">Educacion.</label><BR>
+
+        <input type="radio" name="radP39" id="p39o03" value="3" />
+        <label for="p39o03">Salud.</label><BR>
+
+         <input type="radio" name="radP39" id="p39o04" value="4" />
+        <label for="p39o04">Libertinaje.</label><BR>
+
+      </div><!-- fin pregunta 39 -->
+       <br>
+    <div id="pregunta40"><!-- inicio pregunta 40 -->
+        <h3><b>40. ¿Cuál era tu gasto en transporte diariamente?</b></h3><BR>     
+        <input type="radio" name="radP40" id="p40o01" value="1" checked="checked" />
+        <label for="p40o01">0 a 20 pesos</label><BR> 
+        
+        <input type="radio" name="radP40" id="p40o02" value="2" />
+        <label for="p40o02">21-50 pesos.</label><BR>
+
+        <input type="radio" name="radP40" id="p40o03" value="3" />
+        <label for="p40o03">51-70 pesos.</label><BR>
+
+         <input type="radio" name="radP40" id="p40o04" value="4" />
+        <label for="p40o04">70+ pesos.</label><BR>
+
+      </div><!-- fin pregunta 40 -->
+
+      <br>
+    <div id="pregunta41"><!-- inicio pregunta 41 -->
+        <h3><b>41. ¿Te retrasaste en algún pago de la universidad?</b></h3><BR>
+        <input type="radio" name="radP41" id="p41o01" value="1" checked="checked" />
+        <label for="p41o01">Colegiatura</label><BR>
+        
+        <input type="radio" name="radP41" id="p41o02" value="2" />
+        <label for="p41o02">Laboratorio.</label><BR>
+
+        <input type="radio" name="radP41" id="p41o03" value="3" />
+        <label for="p41o03">Biblioteca.</label><BR>
+
+         <input type="radio" name="radP41" id="p41o04" value="4" />
+        <label for="p41o04">Ninguno.</label><BR>
+
+      </div><!-- fin pregunta 41 -->
+       <br>
+    <div id="pregunta42"><!-- inicio pregunta 42 -->
+        <h3><b>42. ¿Qué transporte usas o usabas para llegar a la escuela?</b></h3><BR>
+        <input type="radio" name="radP42" id="p42o01" value="1" checked="checked" />
+        <label for="p42o01">Transporte publico</label><BR>
+        
+        <input type="radio" name="radP42" id="p42o02" value="2" />
+        <label for="p42o02">Automovil propio.</label><BR>
+
+      </div><!-- fin pregunta 42 -->
+       <br>
+    <div id="pregunta43"><!-- inicio pregunta 43 -->
+        <h3><b>43. ¿Pagas colegiatura?</b></h3><BR>
+        <input type="radio" name="radP43" id="p43o01" value="1" checked="checked" />
+        <label for="p43o01">Inscripcion anual</label> <BR>
+        
+        <input type="radio" name="radP43" id="p43o02" value="2" />
+        <label for="p43o02">Semestre/cuatrimestre.</label><BR>
+
+        <input type="radio" name="radP43" id="p43o03" value="3" />
+        <label for="p43o03">No tengo beca.</label><BR>
+
+         <input type="radio" name="radP43" id="p43o04" value="4" />
+        <label for="p43o04">Ya no estudio.</label><BR><BR><BR>
+
+      </div><!-- fin pregunta 43 -->
+  
+
+
+
+     
+    
+    </div><!-- fin contenedor principal -->  
+    <div id="metodos"><!-- inicio metodos -->
+         <h3><b>Elije el metodo de predicción:</b></h3><BR>
+         <center>
+        <input type="radio" name="radM01" id="m01" value="1" checked="checked" />
+        <label for="m01">Multi-Layer Perceptron</label> <BR>
+        
+        <input type="radio" name="radM01" id="m02" value="2" />
+        <label for="m02">Support Vector Machine.</label><BR>
+
+        <input type="radio" name="radM01" id="m03" value="3" />
+        <label for="m03">Logistic Regression.</label><BR><BR>
+
+      </center>
+       <p><button type="button" name="getVal" onclick="creaYClasificaInstancia()">Determinar riesgo</button></p>
+      <br>
+      <br>
+
+      </div><!-- fin metodos -->
+
+  </body><!-- end of body -->
+</html><!-- end of html -->
